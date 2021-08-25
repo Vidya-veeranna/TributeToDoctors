@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato:wght@100&family=Roboto&family=Sofia&display=swap");
+
+/**********  Global  ************/
+body {
+  overflow-x: hidden;
+  width: 100vw;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --light-gray: hsl(330, 2%, 64%);
+  --primary-color: cyan;
+  --roboto: "Roboto", sans-serif;
+  --gugi: "Gugi", cursive;
+  --sofia: "Sofia", cursive;
+  --load: 500ms;
+  --delay: 600ms;
+}
+
+a {
+  text-decoration: none;
+}
+
+/************Navigation bar**************/
+
+.sidebar {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  background: #1b1b1b;
+  transition: left 0.4s ease;
+}
+.sidebar .text {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1px;
+}
+nav ul {
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+nav ul li {
+  line-height: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+nav ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+nav ul li a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+nav ul li.active a {
+  color: var(--primary-color);
+  background: #1e1e1e;
+  border-left-color: var(--primary-color);
+}
+nav ul li a:hover {
+  background: #1e1e1e;
+}
+nav ul ul {
+  position: static;
+}
+nav ul ul li {
+  line-height: 42px;
+  border-top: none;
+}
+nav ul ul li a {
+  font-size: 17px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+nav ul li.active ul li a {
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+nav ul ul li a:hover {
+  color: cyan !important;
+  background: #1e1e1e !important;
+}
+nav ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+nav ul li a span.rotate {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/*************Slider****************/
+header {
+  width: 20vw;
+  position: relative;
+}
+main {
+  width: 80vw;
+  position: relative;
+  border: 0;
+  margin-left: 20%;
+}
+.carousel,
+.carousel-item {
+  width: 80vw;
+  height: 700px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+  padding: 0.1rem;
+}
+.carousel-indicators :not(.active) {
+  background-color: var(--primary-color);
+  padding: 0.1rem;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 500px) {
+  .carousel,
+  .carousel-item {
+    height: 24em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .carousel,
+  .carousel-item {
+    height: 300px;
+  }
+}
+h5 span {
+  font-size: 2rem;
+}
+/*************Store*************/
+.info {
+  width: 30%;
+  height: 250px;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5%;
+}
+
+@media screen and (max-width: 750px) {
+  .infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .info {
+    width: 80%;
+    height: 250px;
+  }
+}
+
+.paralex {
+  width: 80vw;
+  height: 500px;
+  background-image: url("https://sph.washington.edu/sites/default/files/inline-images/coronavirus-image-1200x400.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-left: 20%;
+}
+.paralex::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#grid img {
+  width: 300px;
+  height: 300px;
+}
